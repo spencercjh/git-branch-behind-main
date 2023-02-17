@@ -22,8 +22,8 @@ runs:
         echo -e "\033[0;34m >>-----当前核查仓库路径${CURRENT_PATH}-----<< \033[0m"
         
         # Check if the "origin/main" branch exists, and if so, update the remote record and compare for any backward commits
-        if git rev-parse --verify ${REFERENCE_BRANCH} >/dev/null 2>&1; then
-      
+        if git rev-parse --verify ${REFERENCE_BRANCH}; then
+
           git fetch origin
         
           NB_COMMITS_BEHIND=$(git rev-list --left-right --count ${REFERENCE_BRANCH}...@ | cut -f1)
