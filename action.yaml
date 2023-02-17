@@ -1,0 +1,14 @@
+name: "git-branch-behind-main"
+description: "Check whether the current branch is behind main"
+branding:
+  icon: git-branch
+  color: orange
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Check
+      shell: bash
+      run: |
+        ./check.sh
