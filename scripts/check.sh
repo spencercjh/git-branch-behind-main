@@ -15,8 +15,8 @@ git rev-list @
 echo $REFERENCE_BRANCH
 git rev-list $REFERENCE_BRANCH
 
-echo $REFERENCE_BRANCH
-git rev-list origin/$REFERENCE_BRANCH
+echo $CURRENT_FEATURE
+git rev-list origin/$CURRENT_FEATURE
 
 echo $CURRENT_FEATURE
 git rev-list $CURRENT_FEATURE
