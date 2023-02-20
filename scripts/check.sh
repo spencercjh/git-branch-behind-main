@@ -2,7 +2,10 @@ git-log-flat-colored() {
   git --no-pager log --format="%C(yellow)%h%Creset %C(cyan)%cd%Creset %s %Cgreen%an%Creset" --date=short "$@"
 }
 
-echo $(pwd)
+pwd
+
+git branch -–show-current
+
 CURRENT_FEATURE=$(git symbolic-ref --short -q HEAD)
 CURRENT_PATH=$(git rev-parse --show-toplevel)
 REFERENCE_BRANCH="origin/main"
