@@ -8,7 +8,9 @@ runs:
   steps:
     - name: Check
       shell: bash
-      run: scripts/check.sh
+      run: |
+        ls -alh
+        bash scripts/check.sh
 #      run: |
 #        git-log-flat-colored() {
 #          git --no-pager log --format="%C(yellow)%h%Creset %C(cyan)%cd%Creset %s %Cgreen%an%Creset" --date=short "$@"
