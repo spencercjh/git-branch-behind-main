@@ -6,11 +6,8 @@ CURRENT_FEATURE=$(git symbolic-ref --short -q HEAD)
 CURRENT_PATH=$(git rev-parse --show-toplevel)
 REFERENCE_BRANCH="origin/main"
 
-echo $CURRENT_FEATURE
-
-
 echo -e "\033[0;34m >>-----当前核查仓库路径${CURRENT_PATH}-----<< \033[0m"
-git fetch origin main
+git fetch origin main $CURRENT_FEATURE
 
 git rev-list --left-right --count ${REFERENCE_BRANCH}...@
 
