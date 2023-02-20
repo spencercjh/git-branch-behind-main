@@ -11,7 +11,7 @@ echo -e "\033[0;34m >>-----当前核查仓库路径${CURRENT_PATH}-----<< \033[0
 git fetch origin main
 git fetch origin feat/feat-for-test
 
-NB_COMMITS_BEHIND=$(git rev-list --left-right --count ${REFERENCE_BRANCH}...@ | cut -f1)
+NB_COMMITS_BEHIND=$(git rev-list --left-right --count ${REFERENCE_BRANCH}...${CURRENT_FEATURE} | cut -f1)
 
 if [ "${NB_COMMITS_BEHIND}" -gt "0" ]; then
   echo -e "\033[0;31m >>-----${CURRENT_FEATURE}-----<< 当前分支有 ${NB_COMMITS_BEHIND} 个提交落后于 \"${REFERENCE_BRANCH}\", 请合并最新的 main 分支代码\n \033[0m"
