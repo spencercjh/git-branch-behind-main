@@ -6,13 +6,9 @@ branding:
 runs:
   using: "composite"
   steps:
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
     - name: Check
       shell: bash
-      run: |
-        ls -alh
-        bash scripts/check.sh
+      run:  $GITHUB_ACTION_PATH/scripts/check.sh
 #      run: |
 #        git-log-flat-colored() {
 #          git --no-pager log --format="%C(yellow)%h%Creset %C(cyan)%cd%Creset %s %Cgreen%an%Creset" --date=short "$@"
