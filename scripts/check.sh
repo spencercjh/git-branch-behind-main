@@ -4,7 +4,7 @@ git-log-flat-colored() {
 
 pwd
 
-git branch -–show-current
+git branch --show-current
 
 CURRENT_FEATURE=$(git symbolic-ref --short -q HEAD)
 CURRENT_PATH=$(git rev-parse --show-toplevel)
