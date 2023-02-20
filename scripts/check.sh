@@ -9,6 +9,15 @@ REFERENCE_BRANCH="origin/main"
 echo -e "\033[0;34m >>-----当前核查仓库路径${CURRENT_PATH}-----<< \033[0m"
 git fetch origin main $CURRENT_FEATURE
 
+echo "@"
+git rev-list @
+
+echo $REFERENCE_BRANCH
+git rev-list $REFERENCE_BRANCH
+
+echo $CURRENT_FEATURE
+git rev-list $CURRENT_FEATURE
+
 git rev-list --left-right --count ${REFERENCE_BRANCH}...@
 
 NB_COMMITS_BEHIND=$(git rev-list --left-right --count ${REFERENCE_BRANCH}...@ | cut -f1)
